@@ -2,7 +2,7 @@ import { expect, selectors } from "@playwright/test";
 import BasePage from "../../../../../global/base/Base.page";
 import AssessmentEditorTabsPage from "../assessmentEditorTabs.page";
 import waitForSaveMessage from "../../../../../global/utils/waitForMessage";
-import  {assessmentType} from "../../../assessments/assessment creation/exampleWrapperCreateNewAssessment.page"
+import  {assessmentType} from "../../../assessments/assessment creation/assessmentCreation.page";
 
 
 

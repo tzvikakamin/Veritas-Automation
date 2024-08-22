@@ -2,13 +2,18 @@ import AssessmentEditorQuestionTab from "../questionTab.page"
 import waitForSaveMessage from "../../../../../../global/utils/waitForMessage"
 import AddScaleToAnswersSection from "./add scale to answers section/addScaleToAnswers.page"
 import BasePage from "../../../../../../global/base/Base.page"
-import { QuestionType } from "../../../assessment creation/exampleWrapperCreateNewAssessment.page"
 import { Locator } from "@playwright/test"
 // import scales to test by assessment type
 import { integrityExtendedScales, personalityScales, integritySEScales, skillIGameScales, skillScales, skillSpeakScales } from '../../scales tab/scaleTab.page'
 import { isRegExp } from "util/types"
 import waitForLoading from "../../../../../../global/utils/waitForLoading"
-// const scalesByAssessType ={integrityExtendedScales,personalityScales,integritySEScales,skillIGameScales,skillScales,skillSpeakScales}
+
+
+export type QuestionType = 'Confirm info' | 'Date' | 'Dates range' | 'Drag and Drop' | 'Free text' | 'Multiple choice'
+    | 'No answers' | 'Questionnaire' | 'Single choice' | 'Video answer' | 'Yes-No'
+
+
+
 
 
 
@@ -27,13 +32,16 @@ class QuestionEditorPage extends BasePage {
         questionTitleInput: this.page.frameLocator('iframe[title="Rich Text Area\\. Press ALT-F9 for menu\\. Press ALT-F10 for toolbar\\. Press ALT-0 for help"]').getByRole('paragraph'),
         settingsBtn: this.page.locator('span[translate="ac.questionEdit.btn.settings"]'),
         questionTypeList: this.page.locator('div[class="col-lg-6"] div[class="btn-form-group form-group__full-width dropdown"]'),
+        saveChangesBtn: this.page.locator('button[ng-click="ok();"]'),
+
+        backToQuestionMainPageButton: this.page.locator('.breadcrumb-back.ng-scope'),
 
         getQuestionType: (questionType: QuestionType) => this.page.locator('[ng-click="onType(item)"]').filter({ hasText: RegExp(`\\b${questionType}\\b`, `i`) }),
 
-        saveChangesBtn: this.page.locator('button[ng-click="ok();"]'),
+        addMediaInput: this.page.locator('input[type="file"]'),
 
-        // this locator is dynamic name so the locator is by 'nth'
-        backToQuestionMainPageButton: this.page.locator('.breadcrumb-back.ng-scope'),
+
+
 
         // answers
         addAnswerButton: this.page.locator('.at-new-item-btn'),
@@ -72,7 +80,14 @@ class QuestionEditorPage extends BasePage {
         await this.$.settingsBtn.click();
         await this.$.questionTypeList.click();
     }
-    // -- All types of questions
+
+    // This function gives the possibility to add a media question
+    async addMediaToQuestion() {
+     await this.$.addMediaInput.setInputFiles("./media upload/video1.mp4")
+     await this.getSaveMessage()
+    }
+
+
 
     // enter question type (locator)
     // private
@@ -141,7 +156,7 @@ class QuestionEditorPage extends BasePage {
             if (scalesName) {
                 for (const scale of scalesName) {
                     await this.addScale(scale, score, specialRule);
-                    
+
                 }
             }
         }

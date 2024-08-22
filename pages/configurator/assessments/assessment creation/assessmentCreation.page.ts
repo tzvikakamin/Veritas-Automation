@@ -3,7 +3,9 @@ import waitForSaveMessage from "../../../../global/utils/waitForMessage"
 import AssessmentEditorTabsPage from "../assessment editor/assessmentEditorTabs.page"
 import BasePage from "../../../../global/base/Base.page"
 import WrapperCreateNewAssessment from "./exampleWrapperCreateNewAssessment.page"
-import { assessmentType } from "./exampleWrapperCreateNewAssessment.page"
+
+
+export type assessmentType = 'Integrity' | 'Integrity Extended' | 'Integrity Social Engineering' | 'Intro' | 'Personality' | 'Skills' | 'Skills IGame' | 'Skills Speak'
 
 // let assessmentType: assessmentType
 

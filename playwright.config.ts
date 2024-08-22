@@ -17,7 +17,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   
-  timeout: 0*60*1000, // 1 min
+  timeout: 0*60*10000, // 1 min
   //? אם מגדירים טיים אאוט שונה מ0, צריך לדאוג לעדכן את הטיים אאוט בלוגין פייג שיהיה פחות מזה
 
   use: {
@@ -76,10 +76,10 @@ export default defineConfig({
     //   name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
     // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome'},
-    // },
+  //   {
+  //     name: 'Google Chrome',
+  //     use: { ...devices['Desktop Chrome'], channel: 'chrome'},
+  //   },
   ],
 
   /* Run your local dev server before starting the tests */

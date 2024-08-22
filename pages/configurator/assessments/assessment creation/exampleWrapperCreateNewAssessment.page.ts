@@ -3,12 +3,13 @@ import AddScaleToAnswersSection from "../assessment editor/question tab/question
 import AssessmentEditorScalesTab from "../assessment editor/scales tab/scaleTab.page";
 import AssessmentsPage from "../assessment.page";
 import AssessmentCreationPage from "./assessmentCreation.page";
+import { assessmentType } from "./assessmentCreation.page"
+import { QuestionType } from "../assessment editor/question tab/questionsEditor/questionEditor.page";
 // import assessmentType from "./assessmentCreation.page";
 
-export type assessmentType = 'Integrity' | 'Integrity Extended' | 'Integrity Social Engineering' | 'Intro' | 'Personality' | 'Skills' | 'Skills IGame' | 'Skills Speak'
 
-export type QuestionType = 'Confirm info' |'Date' | 'Dates range' | 'Drag and Drop' |'Free text'|'Multiple choice' 
-    |'No answers'|'Questionnaire'|'Single choice'|'Video answer'|'Yes-No'
+
+
 
 class WrapperCreateNewAssessment extends BasePage {
 
