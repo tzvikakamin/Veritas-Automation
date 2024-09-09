@@ -1,7 +1,8 @@
-import { Locator, Page, chromium } from "@playwright/test";
+import { Browser, Locator, Page, chromium } from "@playwright/test";
 
 class BasePage {
     page: Page
+   
     constructor(page: Page) {
         this.page = page
     }

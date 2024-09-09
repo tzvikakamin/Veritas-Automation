@@ -2,90 +2,30 @@
   "cookies": [
     {
       "name": "_al",
-      "value": "al_66811bcd9c5224_65020590",
-      "domain": "10.0.2.102",
+      "value": "al_66cef32e611c53_65628970",
+      "domain": "34.165.52.158",
       "path": "/",
-      "expires": 1751273293.356546,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_ga",
-      "value": "GA1.1.495894602.1719738239",
-      "domain": "10.0.2.102",
-      "path": "/",
-      "expires": 1756899075.074385,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_ga",
-      "value": "GA1.1.1265284155.1722169015",
-      "domain": "34.165.121.223",
-      "path": "/",
-      "expires": 1756809860.536796,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_al",
-      "value": "al_66a636b6eb99d5_09863606",
-      "domain": "34.165.121.223",
-      "path": "/",
-      "expires": 1753705014.923606,
+      "expires": 1756374702.293256,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
     },
     {
-      "name": "PHPSESSID",
-      "value": "9842948928d557922155995eac024d6d",
-      "domain": "34.165.121.223",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "PHPSESSID",
-      "value": "695ca1222713c9597ba0f4df2accb93c",
-      "domain": "10.0.2.102",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
       "name": "_ga",
-      "value": "GA1.1.324208235.1722339378",
+      "value": "GA1.1.2106732249.1724838707",
       "domain": "34.165.52.158",
       "path": "/",
-      "expires": 1758191789.976164,
+      "expires": 1759819665.855205,
       "httpOnly": false,
       "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_al",
-      "value": "al_66a8d030e71816_44151052",
-      "domain": "34.165.52.158",
-      "path": "/",
-      "expires": 1753875377.998668,
-      "httpOnly": false,
-      "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "_gid",
-      "value": "GA1.1.1079494193.1723622697",
+      "value": "GA1.1.639809794.1725174925",
       "domain": "34.165.52.158",
       "path": "/",
-      "expires": 1723718189,
+      "expires": 1725346065,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -95,14 +35,14 @@
       "value": "1",
       "domain": "34.165.52.158",
       "path": "/",
-      "expires": 1723631844,
+      "expires": 1725259720,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "PHPSESSID",
-      "value": "1bae43aacd664c29382cc05b15a028e1",
+      "value": "b79b4549a05f42cf814329bbc73d52ed",
       "domain": "34.165.52.158",
       "path": "/",
       "expires": -1,
@@ -113,7 +53,7 @@
   ],
   "origins": [
     {
-      "origin": "https://10.0.2.102",
+      "origin": "https://34.165.52.158",
       "localStorage": [
         {
           "name": "player",
@@ -121,11 +61,11 @@
         },
         {
           "name": "intercom.intercom-state",
-          "value": "{\"app\":{\"color\":\"#333333\",\"secondaryColor\":\"#333333\",\"openConfig\":{\"layout\":\"default\",\"openTo\":\"messages\",\"spaces\":[{\"type\":\"messages\",\"label\":\"Messages\",\"navigationLabel\":\"Messages\",\"badge\":null}],\"userHasReceivedChecklists\":false,\"userHasLiveNewsfeed\":false,\"userHasTickets\":false},\"selfServeSuggestionsMatch\":false,\"name\":\"Adam Milo [TEST]\",\"features\":{\"anonymousInboundMessages\":true,\"googleAnalytics\":false,\"hubspotInstalled\":false,\"inboundMessages\":true,\"marketoEnrichmentInstalled\":false,\"outboundMessages\":true,\"googleAnalytics4Integration\":false},\"launcherLogoUrl\":null,\"inboundConversationsDisabled\":false,\"isInstantBootEnabled\":false,\"alignment\":\"right\",\"horizontalPadding\":20,\"verticalPadding\":20,\"isDeveloperWorkspace\":false,\"customGoogleAnalyticsTrackerId\":null},\"launcher\":{\"isLauncherEnabled\":true},\"launcherDiscoveryMode\":{\"hasDiscoveredLauncher\":true},\"user\":{\"role\":\"user\",\"locale\":\"en\",\"hasConversations\":false},\"message\":{},\"conversations\":{\"byId\":{}},\"openOnBoot\":{\"type\":null,\"metadata\":{},\"lastOpenAtTimestamp\":1719822030119},\"operator\":{\"lastComposerEvent\":0},\"router\":{\"isInitialized\":false,\"navigationQueue\":[]}}"
+          "value": "{\"app\":{\"color\":\"#333333\",\"secondaryColor\":\"#333333\",\"openConfig\":{\"layout\":\"default\",\"openTo\":\"messages\",\"spaces\":[{\"type\":\"messages\",\"label\":\"Messages\",\"navigationLabel\":\"Messages\",\"badge\":null}],\"userHasReceivedChecklists\":false,\"userHasLiveNewsfeed\":false,\"userHasTickets\":false},\"selfServeSuggestionsMatch\":false,\"name\":\"Adam Milo [TEST]\",\"features\":{\"anonymousInboundMessages\":true,\"googleAnalytics\":false,\"hubspotInstalled\":false,\"inboundMessages\":true,\"marketoEnrichmentInstalled\":false,\"outboundMessages\":true,\"googleAnalytics4Integration\":true},\"launcherLogoUrl\":null,\"inboundConversationsDisabled\":false,\"isInstantBootEnabled\":false,\"alignment\":\"right\",\"horizontalPadding\":20,\"verticalPadding\":20,\"isDeveloperWorkspace\":false,\"customGoogleAnalyticsTrackerId\":null},\"launcher\":{\"isLauncherEnabled\":true},\"launcherDiscoveryMode\":{\"hasDiscoveredLauncher\":true},\"user\":{\"role\":\"user\",\"locale\":\"en\",\"hasConversations\":false},\"message\":{},\"conversations\":{\"byId\":{}},\"openOnBoot\":{\"type\":null,\"metadata\":{},\"lastOpenAtTimestamp\":1725176215260},\"operator\":{\"lastComposerEvent\":0},\"router\":{\"isInitialized\":false,\"navigationQueue\":[]}}"
         },
         {
           "name": "XSRF_TOKEN",
-          "value": "dd001fdce28b43eed418a90a816e7cc3"
+          "value": "d54e077c10aba337583c613e0d7aaa6d"
         },
         {
           "name": "locale",
@@ -137,7 +77,7 @@
         },
         {
           "name": "inactivityTick",
-          "value": "1719754458296"
+          "value": "1724926503715"
         }
       ]
     },
@@ -147,31 +87,6 @@
         {
           "name": "XSRF_TOKEN",
           "value": "ac8b76779bfaa6bf25e1810a9609db36"
-        },
-        {
-          "name": "locale",
-          "value": "{\"male\":true,\"id\":\"1\",\"name_tid\":\"72057594213098023\",\"code\":\"en\",\"production\":\"t\",\"content\":\"t\",\"short_code\":\"en\",\"rtl\":\"f\",\"locale\":\"en_us\",\"gender\":\"t\",\"order_index\":\"2\",\"name\":\"English\",\"names_ml\":[{\"id\":\"72057594213098941\",\"ct_language_id\":\"1\",\"value\":\"English\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785415508444316\",\"ct_language_id\":\"1801439851240451860\",\"value\":\"Inglés\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"72057594213098947\",\"ct_language_id\":\"3\",\"value\":\"Англiйська\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"1801439851240443223\",\"ct_language_id\":\"4\",\"value\":\"אנגלית\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785425880074571\",\"ct_language_id\":\"1801439851240446753\",\"value\":\"Inglês\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"}]}"
-        },
-        {
-          "name": "content",
-          "value": "{\"male\":true,\"id\":\"1\",\"name_tid\":\"72057594213098023\",\"code\":\"en\",\"production\":\"t\",\"content\":\"t\",\"short_code\":\"en\",\"rtl\":\"f\",\"locale\":\"en_us\",\"gender\":\"t\",\"order_index\":\"2\",\"name\":\"English\",\"names_ml\":[{\"id\":\"72057594213098941\",\"ct_language_id\":\"1\",\"value\":\"English\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785415508444316\",\"ct_language_id\":\"1801439851240451860\",\"value\":\"Inglés\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"72057594213098947\",\"ct_language_id\":\"3\",\"value\":\"Англiйська\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"1801439851240443223\",\"ct_language_id\":\"4\",\"value\":\"אנגלית\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785425880074571\",\"ct_language_id\":\"1801439851240446753\",\"value\":\"Inglês\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"}]}"
-        },
-        {
-          "name": "player",
-          "value": "{\"male\":true,\"id\":\"1\",\"name_tid\":\"72057594213098023\",\"code\":\"en\",\"production\":\"t\",\"content\":\"t\",\"short_code\":\"en\",\"rtl\":\"f\",\"locale\":\"en_us\",\"gender\":\"t\",\"order_index\":\"2\",\"name\":\"English\",\"names_ml\":[{\"id\":\"72057594213098941\",\"ct_language_id\":\"1\",\"value\":\"English\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785415508444316\",\"ct_language_id\":\"1801439851240451860\",\"value\":\"Inglés\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"72057594213098947\",\"ct_language_id\":\"3\",\"value\":\"Англiйська\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"1801439851240443223\",\"ct_language_id\":\"4\",\"value\":\"אנגלית\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785425880074571\",\"ct_language_id\":\"1801439851240446753\",\"value\":\"Inglês\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"}]}"
-        }
-      ]
-    },
-    {
-      "origin": "https://34.165.52.158",
-      "localStorage": [
-        {
-          "name": "intercom.intercom-state",
-          "value": "{\"app\":{\"color\":\"#333333\",\"secondaryColor\":\"#333333\",\"openConfig\":{\"layout\":\"default\",\"openTo\":\"messages\",\"spaces\":[{\"type\":\"messages\",\"label\":\"Messages\",\"navigationLabel\":\"Messages\",\"badge\":null}],\"userHasReceivedChecklists\":false,\"userHasLiveNewsfeed\":false,\"userHasTickets\":false},\"selfServeSuggestionsMatch\":false,\"name\":\"Adam Milo [TEST]\",\"features\":{\"anonymousInboundMessages\":true,\"googleAnalytics\":false,\"hubspotInstalled\":false,\"inboundMessages\":true,\"marketoEnrichmentInstalled\":false,\"outboundMessages\":true,\"googleAnalytics4Integration\":true},\"launcherLogoUrl\":null,\"inboundConversationsDisabled\":false,\"isInstantBootEnabled\":false,\"alignment\":\"right\",\"horizontalPadding\":20,\"verticalPadding\":20,\"isDeveloperWorkspace\":false,\"customGoogleAnalyticsTrackerId\":null},\"launcher\":{\"isLauncherEnabled\":true},\"launcherDiscoveryMode\":{\"hasDiscoveredLauncher\":false},\"user\":{\"role\":\"user\",\"locale\":\"en\",\"hasConversations\":false},\"message\":{},\"conversations\":{\"byId\":{}},\"openOnBoot\":{\"type\":null,\"metadata\":{},\"lastOpenAtTimestamp\":1722515606890},\"operator\":{\"lastComposerEvent\":0},\"router\":{\"isInitialized\":false,\"navigationQueue\":[]}}"
-        },
-        {
-          "name": "XSRF_TOKEN",
-          "value": "6eda1abeea12c1e83dcad56055a8edf6"
         },
         {
           "name": "locale",

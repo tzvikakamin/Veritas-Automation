@@ -3,7 +3,10 @@ import waitForSaveMessage from "../../../../global/utils/waitForMessage"
 import AssessmentEditorTabsPage from "../assessment editor/assessmentEditorTabs.page"
 import BasePage from "../../../../global/base/Base.page"
 import WrapperCreateNewAssessment from "./exampleWrapperCreateNewAssessment.page"
-import { assessmentType } from "./exampleWrapperCreateNewAssessment.page"
+import { env } from "node:process"
+
+
+export type assessmentType = 'Integrity' | 'Integrity Extended' | 'Integrity Social Engineering' | 'Intro' | 'Personality' | 'Skills' | 'Skills IGame' | 'Skills Speak'
 
 // let assessmentType: assessmentType
 
@@ -12,7 +15,7 @@ import { assessmentType } from "./exampleWrapperCreateNewAssessment.page"
 
 
 class AssessmentCreationPage extends BasePage {
-     assessmentName :string;
+    assessmentName: string;
 
     $ = {
         assessmentNameInput: this.page.locator('#assessmentName'),
@@ -30,7 +33,9 @@ class AssessmentCreationPage extends BasePage {
         automaticContinueButton: this.page.locator('label[for="aas1"]'),
         unlimitedCorrectionsButton: this.page.locator('label[for="AUnlimited"]'),
         skippingButton: this.page.locator('label[for="ASkipping"]'),
-        assessmentNamePlaceHolder: this.page.locator('h1[dr-switch-models="a.assessment_names_ml"]')
+        assessmentNamePlaceHolder: this.page.locator('h1[dr-switch-models="a.assessment_names_ml"]'),
+        successMessage: this.page.locator('alert span[translate="notices.dataSavedSuccessfully"]'),
+        
     }
 
 
@@ -41,10 +46,10 @@ class AssessmentCreationPage extends BasePage {
     }
 
     async insertName(assessmentName: string) {
-     await this.$.assessmentNameInput.fill(assessmentName);
-     let name = await this.$.assessmentNameInput.inputValue();
-     this.assessmentName = name;
-     return this.assessmentName;
+        await this.$.assessmentNameInput.fill(assessmentName);
+        let name = await this.$.assessmentNameInput.inputValue();
+        this.assessmentName = name;
+        return this.assessmentName;
 
     }
 
@@ -110,72 +115,81 @@ class AssessmentCreationPage extends BasePage {
         await this.$.assessmentSubtypeSpeak.click();
     }
 
+
+    // if not logged in the test will be failed - todo = fix the await for...
     async createNewAssessment(assessmentType: assessmentType) {
         const assessment = new AssessmentsPage(this.page)
+        const AssessmentPageUrl = 'ac/#/assessments';
+
+
+        // await assessment.page.waitForURL(process.env.BASE_URL+'/ac/#/assessments',{waitUntil:"domcontentloaded"})
+        // await assessment.page.waitForLoadState('domcontentloaded')
+        // const [response] = await Promise.all([
+        //     await assessment.page.waitForResponse(response =>
+        //         response.url() === 'https://34.165.52.158/api/dicts/langs?lang=1' &&
+        //         response.status() === 200
+        //     ),]);
+            
+            const currentUrl = await this.page.url();
+        if ((currentUrl.endsWith(AssessmentPageUrl)) || (await assessment.$.addAssessmentButton.isVisible())) {
+            await assessment.clickAddNewAssessment()
+        }
 
         switch (assessmentType) {
             case 'Integrity':
-                await assessment.clickAddNewAssessment()
                 await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
                 await this.selectIntegrityAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
-                await console.log(this.assessmentName)
+                console.log(this.assessmentName)
                 break
             case 'Integrity Extended':
-                await assessment.clickAddNewAssessment()
                 await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
                 await this.selectIntegrityExtendedAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
-                await console.log(this.assessmentName);
+                console.log(this.assessmentName);
                 break
             case 'Integrity Social Engineering':
-                await assessment.clickAddNewAssessment()
                 await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
                 await this.selectIntegritySocialEngineeringAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
-                await console.log(this.assessmentName);
+                console.log(this.assessmentName);
                 break
             case 'Intro':
-                await assessment.clickAddNewAssessment()
                 await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
                 await this.selectIntroAssessment();
                 await this.saveAndGetSaveMessage();
-                await console.log(this.assessmentName);
+                console.log(this.assessmentName);
                 break
             case 'Personality':
-                await assessment.clickAddNewAssessment()
                 await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
                 await this.selectPersonalityAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
-                await console.log(this.assessmentName);
+                console.log(this.assessmentName);
                 break
             case 'Skills':
-                await assessment.clickAddNewAssessment()
                 await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
                 await this.selectSkillsAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
-                await console.log(this.assessmentName);
+                console.log(this.assessmentName);
                 break
             case 'Skills IGame':
-                await assessment.clickAddNewAssessment()
                 await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
                 await this.selectSkillsIGameAssessment();
                 await this.saveAndGetSaveMessage();
-                await console.log(this.assessmentName);
+                console.log(this.assessmentName);
                 break
             case 'Skills Speak':
-                await assessment.clickAddNewAssessment()
                 await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
                 await this.selectSkillsSpeakAssessment();
                 await this.saveAndGetSaveMessage();
-                await console.log(this.assessmentName);
+                console.log(this.assessmentName);
                 break
-                         //Note for undefined
+            //Note for undefined
             default:
                 console.log('undefined assessment type')
         }
