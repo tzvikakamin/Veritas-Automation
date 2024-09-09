@@ -24,7 +24,7 @@
     "assets": "/playerRunner/html menu server/index.html"
   },
   "devDependencies": {
-    "@playwright/test": "^1.42.1",
+    "@playwright/test": "^1.46.0",
     "@types/express": "^4.17.21",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.11.30",

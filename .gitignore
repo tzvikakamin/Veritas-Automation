@@ -135,3 +135,7 @@ Player-Runner-Settings.json
 
 # storage state - save the login token
 storageState.json
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
