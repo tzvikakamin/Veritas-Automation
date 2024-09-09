@@ -17,21 +17,23 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   
-  timeout: 0*60*1000, // 1 min
+  timeout: 5*60*1000, // 5 min
   //? אם מגדירים טיים אאוט שונה מ0, צריך לדאוג לעדכן את הטיים אאוט בלוגין פייג שיהיה פחות מזה
 
   use: {
     headless: false,
     // baseURL: 'https://10.0.2.102',
-    baseURL: 'https://34.165.52.158/',
+    baseURL: 'https://34.165.52.158',
     // baseURL: 'https://ama.am-test.com',
     // baseURL: 'https://amproxy.ravtech.co.il',
     ignoreHTTPSErrors: true,
     trace: 'on',
     launchOptions: {
       args: [ '--start-maximized' ],
+      slowMo: 50,
     },
-    storageState: 'storageState.json'
+    storageState: 'storageState.json',
+    
   },
 
 
@@ -45,8 +47,10 @@ export default defineConfig({
         viewport: null,
         launchOptions:{
           args: [ '--start-maximized' ],
+          slowMo: 50,
         },
-        storageState: 'storageState.json'
+        storageState: 'storageState.json',
+        
       },
       
     },
@@ -76,10 +80,10 @@ export default defineConfig({
     //   name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
     // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome'},
-    // },
+  //   {
+  //     name: 'Google Chrome',
+  //     use: { ...devices['Desktop Chrome'], channel: 'chrome'},
+  //   },
   ],
 
   /* Run your local dev server before starting the tests */
