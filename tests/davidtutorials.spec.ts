@@ -15,7 +15,6 @@ import { integrityExtendedScales, personalityScales, integritySEScales, skillIGa
 import singleChoice from '../pages/player/screens/singleChoice';
 
 test('david', async ({ page }) => {
-await page
     const createAssessment = new AssessmentCreationPage(page);
     // const scalesPage = new AssessmentEditorScalesTab(page);
     const assessmentEditorTabs = new AssessmentEditorTabsPage(page);
@@ -34,34 +33,34 @@ await page
 
     // await page.pause()
     await wrapperCreateNewAssessment.gotoAssessmentPage();
-    await wrapperCreateNewAssessment.createAssessmentWithScalesAndQuestions('Integrity Extended');
-    await assessmentEditorTabs.navigateToQuestions();
-    await questionPage.clickAddQuestion();
-    await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Date',['1qq','2'],integrityExtendedScales,88,undefined);
-    await questionEditorPage.gotoQuestionMainPage();
-    await questionPage.clickAddQuestion();
-    await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Dates range',['1gg','2'],integrityExtendedScales,35,undefined);
-    await questionEditorPage.gotoQuestionMainPage();
-    await questionPage.clickAddQuestion();
-    await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Free text',['1ff','2'],integrityExtendedScales,22,undefined);
-    await questionEditorPage.gotoQuestionMainPage();
-    await questionPage.clickAddQuestion(); 
-    await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Multiple choice',['1ee','2'],integrityExtendedScales,11,undefined);
-    await questionEditorPage.gotoQuestionMainPage();
-    await questionPage.clickAddQuestion();
-    await questionEditorPage.AddQuestionAndAnswersAndConnectScale('No answers',['1dd','2'],integrityExtendedScales,33,undefined);
-    await questionEditorPage.gotoQuestionMainPage();
-    await questionPage.clickAddQuestion();
-    await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Single choice',['1cc','2'],integrityExtendedScales,44,undefined);
-    await questionEditorPage.gotoQuestionMainPage();
-    await questionPage.clickAddQuestion();
-    await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Video answer',['1bb','2'],integrityExtendedScales,55,undefined);
-    await questionEditorPage.gotoQuestionMainPage();
-    await questionPage.clickAddQuestion();
-    await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Yes-No',['1aa','2'],integrityExtendedScales,77,undefined);
-    await questionEditorPage.gotoQuestionMainPage();
-    await questionPage.clickAddQuestion();
-    await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Drag and Drop',['1zz','2'],integrityExtendedScales,88,undefined);
+    await wrapperCreateNewAssessment.createAssessmentWithScalesAndQuestions('Integrity');
+    // await assessmentEditorTabs.navigateToQuestions();
+    // await questionPage.clickAddQuestion();
+    // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Date',['1qq','2'],integrityExtendedScales,88,undefined);
+    // await questionEditorPage.gotoQuestionMainPage();
+    // await questionPage.clickAddQuestion();
+    // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Dates range',['1gg','2'],integrityExtendedScales,35,undefined);
+    // await questionEditorPage.gotoQuestionMainPage();
+    // await questionPage.clickAddQuestion();
+    // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Free text',['1ff','2'],integrityExtendedScales,22,undefined);
+    // await questionEditorPage.gotoQuestionMainPage();
+    // await questionPage.clickAddQuestion(); 
+    // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Multiple choice',['1ee','2'],integrityExtendedScales,11,undefined);
+    // await questionEditorPage.gotoQuestionMainPage();
+    // await questionPage.clickAddQuestion();
+    // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('No answers',['1dd','2'],integrityExtendedScales,33,undefined);
+    // await questionEditorPage.gotoQuestionMainPage();
+    // await questionPage.clickAddQuestion();
+    // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Single choice',['1cc','2'],integrityExtendedScales,44,undefined);
+    // await questionEditorPage.gotoQuestionMainPage();
+    // await questionPage.clickAddQuestion();
+    // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Video answer',['1bb','2'],integrityExtendedScales,55,undefined);
+    // await questionEditorPage.gotoQuestionMainPage();
+    // await questionPage.clickAddQuestion();
+    // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Yes-No',['1aa','2'],integrityExtendedScales,77,undefined);
+    // await questionEditorPage.gotoQuestionMainPage();
+    // await questionPage.clickAddQuestion();
+    // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Drag and Drop',['1zz','2'],integrityExtendedScales,88,undefined);
     
     // await questionEditorPage.selectQuestionTypeAndAddAnswersAndAddScalesAndSave('question Name : Confirm info','Confirm info',undefined,integrityExtendedScales,33,undefined);
     

@@ -11,20 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Meby123B/Adam-Milo.git"
+    "url": "git+https://github.com/david-koop/Veritas-Automation.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Meby123B/Adam-Milo/issues"
+    "url": "https://github.com/david-koop/Veritas-Automation/issues"
   },
-  "homepage": "https://github.com/Meby123B/Adam-Milo#readme",
+  "homepage": "https://github.com/david-koop/Veritas-Automation#readme",
   "pkg": {
     "assets": "/playerRunner/html menu server/index.html"
   },
   "devDependencies": {
-    "@playwright/test": "^1.42.1",
+    "@playwright/test": "^1.46.1",
     "@types/express": "^4.17.21",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.11.30",

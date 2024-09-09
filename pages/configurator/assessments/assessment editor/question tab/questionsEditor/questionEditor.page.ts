@@ -39,6 +39,7 @@ class QuestionEditorPage extends BasePage {
         getQuestionType: (questionType: QuestionType) => this.page.locator('[ng-click="onType(item)"]').filter({ hasText: RegExp(`\\b${questionType}\\b`, `i`) }),
 
         addMediaInput: this.page.locator('input[type="file"]'),
+        addMediaSuccessfullyMessage: this.page.locator('alert span[translate="notices.successfullyLoaded"]'),
 
 
 
@@ -52,6 +53,7 @@ class QuestionEditorPage extends BasePage {
         saveButton: this.page.locator('[translate="ac.questionEdit.btn.save"]'),
         exitEditor: this.page.locator('div[class="col-lg-9 col-md-9 col-sm-9 ng-scope"] li:nth-child(4)'),
 
+        successMessage: this.page.locator('alert span[translate="notices.dataSavedSuccessfully"]'),
 
         //questionnaire locators
         addQuestionInQuestionnaireButton: this.page.locator('span[translate="ac.questionEdit.btn.add"]'),
@@ -136,6 +138,7 @@ class QuestionEditorPage extends BasePage {
     async selectQuestionTypeAndAddAnswersAndAddScalesAndSave(questionName: string, questionType: QuestionType, answers?: string[], scalesName?: Array<string>, score?: number, specialRule?: string) {
         await this.insertQuestionName(questionName);
         await this.selectQuestionType(questionType);
+        console.log('trying to add ' + questionName);
         if (answers) {
             for (const answer of answers) {
                 await this.clickAddAnswer();
@@ -163,6 +166,8 @@ class QuestionEditorPage extends BasePage {
 
         await this.clickSaveQuestion();
         await this.getSaveMessage();
+        console.log('added ' + questionName + ' type, successfully');
+
     }
 
     async createQuestionnaireWithSingleChoiceAndFreeText(questionName: string, questionType: 'Questionnaire', scalesName?: Array<string>, score?: number, specialRule?: string,) {

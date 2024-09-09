@@ -1,10 +1,22 @@
+// {
+//   "compilerOptions": {
+//     "target": "ES5",
+//     "module": "CommonJS",
+//     "sourceMap": true,
+//     "skipLibCheck": true,
+//     "moduleResolution": "Node"
+//     // "outDir": "dist"
+//   }
+// }
+
 {
-    "compilerOptions": {
-        "target": "ES5",
-        "module": "CommonJS",
-        "sourceMap": true,
-        "skipLibCheck": true,
-        "moduleResolution": "Node"
-        // "outDir": "dist"
-    }
+  "compilerOptions": {
+    "target": "es6", // או גרסה אחרת כמו "es2020"
+    "module": "commonjs", // או "esnext", "umd", וכו'
+    "esModuleInterop": true, // מאפשר ייבוא של מודולים עם `export =`
+    "allowSyntheticDefaultImports": true, // מאפשר ייבוא של ברירות מחדל ממודולים שאין להם ייצוא ברירת מחדל
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "moduleResolution": "Node"
+  }
 }

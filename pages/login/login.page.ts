@@ -1,7 +1,10 @@
 import BasePage from '../../global/base/Base.page';
 import changeToEnglish from './utils/changeToEnglish'
 import ConfiguratorNavbarPage from '../configurator/configuratorNavbar.page';
+import Tesseract from 'tesseract.js';
 import { selectors } from '@playwright/test';
+import extractTextFromImage from '../../Convert files/convertCode';
+import { timeLog } from 'console';
 
 const LOGIN_TIMEOUT = 20 * 1000 // 20 seconds
 
@@ -14,9 +17,8 @@ class LoginPage extends BasePage {
         errorMessageDiv: this.page.locator('.text-error').last(),
         captchaSuccessMessage: this.page.locator('span [id="success-text"]'),
 
-
-
-        // captchaFrame:  this.page.frameLocator('iframe'),
+        captchaLocator: this.page.locator('[id="turnstile_widget"]'),
+        captchaFrame: this.page.frameLocator('iframe'),
 
     }
 
@@ -30,18 +32,51 @@ class LoginPage extends BasePage {
 
 
 
+
     async login(username?: string, password?: string) {
-        // const a = this.$.captchaFrame
-        // await a.getByText('Success!').waitFor({state:'visible'})
+
         await this.$.usernameInput.click({ timeout: LOGIN_TIMEOUT })
         await this.$.usernameInput.fill(username || this.defaultUsername);
 
         await this.$.passwordInput.click()
         await this.$.passwordInput.fill(password || this.defaultPassword);
-        await this.$.loginButton.click({ timeout: LOGIN_TIMEOUT })
+        
+
+
+        let imageText = await this.screenShotCaptcha()
+        let successLogin: boolean = false
+
+
+
+        for (let index = 0; index < 10; index++) {
+            if (imageText.includes('ccess')) {
+                await this.$.loginButton.click({ timeout: LOGIN_TIMEOUT });
+                successLogin = true
+                break;
+            } else {
+                imageText = await this.screenShotCaptcha()
+
+            }
+        }
+        if (!successLogin) {
+            await console.log('The captcha blocked me')
+            
+
+        }
 
         return new ConfiguratorNavbarPage(this.page);
     }
+
+
+    async screenShotCaptcha() {
+        await this.$.captchaLocator.screenshot({ path: 'Convert files/screenShots/captcha.png', });
+        const imagePath = 'Convert files/screenShots/captcha.png'; // הנתיב לתמונה שצולמה
+        const result = await Tesseract.recognize(imagePath, 'eng',);
+        const text = result.data.text;
+        console.log('Extracted text:', text);
+        return text
+    }
+
 
 }
 

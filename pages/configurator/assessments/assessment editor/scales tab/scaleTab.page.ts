@@ -2,12 +2,12 @@ import { expect, selectors } from "@playwright/test";
 import BasePage from "../../../../../global/base/Base.page";
 import AssessmentEditorTabsPage from "../assessmentEditorTabs.page";
 import waitForSaveMessage from "../../../../../global/utils/waitForMessage";
-import  {assessmentType} from "../../../assessments/assessment creation/assessmentCreation.page";
+import { assessmentType } from "../../../assessments/assessment creation/assessmentCreation.page";
 
 
 
 
-export const integrityExtendedScales = ['Alcohol', 'Good Impression', 'Self-control', 'Personality-Integrity Total', 'Conformity', 'Employment stability', 'Bribe', 'Safety', 'Responsibility', 'Violence', 'Drugs', 'Theft', 'Loyalty', 'Reliability','Substance abuse'];
+export const integrityExtendedScales = ['Alcohol', 'Good Impression', 'Self-control', 'Personality-Integrity Total', 'Conformity', 'Employment stability', 'Bribe', 'Safety', 'Responsibility', 'Violence', 'Drugs', 'Theft', 'Loyalty', 'Reliability', 'Substance abuse'];
 export const integritySEScales = ['Impulsiveness', 'Risk-taking', 'Potential for personal risk', 'Manipulative behavior', 'Phishing awareness'];
 export const personalityScales = ['Self-control', 'Conformity'];
 export const skillScales = ['Skills'];
@@ -31,6 +31,7 @@ class AssessmentEditorScalesTab extends BasePage {
         scaleNameField: this.page.locator('#scaleName'),
         selectNormList: this.page.locator('.ellipsis.ng-scope[ng-if="!states.asmScale.activeId[asm.id].scale[scale.id].normId"]'),
         openScaleField: this.page.locator('.show-short'),
+        id_nullScaleFieldText: this.page.locator('//span[@class="scales-subtype text-standard ng-binding"]').getByText('id_null'),
         normList: this.page.locator('[ng-if="!states.asmScale.activeId[asm.id].scale[scale.id].normId"]'),
         getNormItem: (normName: string) => {
             const parent = this.page.locator('.custom-dropdown-menu__item.ng-scope').filter({ hasText: normName }).first()
@@ -50,6 +51,7 @@ class AssessmentEditorScalesTab extends BasePage {
         redRightBtnInScale: this.page.locator('div[class="pull-right btn-group dropdown open"] li[class="ng-scope red"]'),
         idealRangeFromInput: this.page.locator('input[z-data="norm.range_from"]'),
         idealRangeToInput: this.page.locator('input[z-data="norm.range_to"]'),
+        successMessage: this.page.locator('alert span[translate="notices.dataSavedSuccessfully"]'),
 
 
     }
@@ -97,12 +99,13 @@ class AssessmentEditorScalesTab extends BasePage {
         }
     }
 
-
+   
     private async selectScaleNameAndType(scaleTypeName: string) {
-        await this.$.addScaleBtn.click();
-        if (await this.$.openScaleField.filter({ hasText: /^id_null$/ }).isVisible()) {
+       await this.$.addScaleBtn.click();
+        if (await this.$.id_nullScaleFieldText.first().isVisible()) {
             await this.$.openScaleField.click()
         }
+
         await this.$.scaleTypeList.click();
 
         await this.page.getByText(scaleTypeName, { exact: true }).first().click();
@@ -171,11 +174,21 @@ class AssessmentEditorScalesTab extends BasePage {
             if (await this.$.theRightPlusBtnInScale.isVisible()) {
                 await this.addColorsForScaleInRegularIntegrity();
             }
+
+
+            //this "if" is for the error in veritas that allow to create scale with norm like skills/personality 
+            if (await this.$.idealRangeFromInput.isVisible()) {
+                await this.$.idealRangeFromInput.fill('3');
+                await this.$.idealRangeToInput.fill('8');
+            }
+
+
+
         }
         await this.saveScale()
     }
 
-
+    // add || 'integrity' for the variable scaleNorm...
     async addScaleForIntegritySocialEngineering() {
         let scaleNormForIntegritySE = 'אמינות'
         for (let i = 0; i < integritySEScales.length; i++) {
@@ -218,10 +231,15 @@ class AssessmentEditorScalesTab extends BasePage {
     }
 
 
-
-    async navigateToScaleTabAndAddScalesAndNormToAssessment(assessmentType:assessmentType ) {
+    // this is the most used function
+    async navigateToScaleTabAndAddScalesAndNormToAssessment(assessmentType: assessmentType) {
         const assessmentEditor = new AssessmentEditorTabsPage(this.page)
         await assessmentEditor.navigateToScales()
+        const [response] = await Promise.all([
+           await assessmentEditor.page.waitForResponse(response => 
+              response.url() === 'https://34.165.52.158/api/clients/get_orgs_list' &&
+              response.status() === 200 
+            ),]);
         switch (assessmentType) {
             case 'Integrity':
                 await this.addScaleForIntegrityAndExtendedScore();
@@ -245,7 +263,7 @@ class AssessmentEditorScalesTab extends BasePage {
             case 'Skills Speak':
                 await this.addScaleForSkillSpeak();
                 break
-     //Note for undefined
+            //Note for undefined
             default:
                 console.log('undefined assessment type')
 
