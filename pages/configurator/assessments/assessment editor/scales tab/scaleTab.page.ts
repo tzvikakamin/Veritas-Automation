@@ -7,12 +7,12 @@ import { assessmentType } from "../../../assessments/assessment creation/assessm
 
 
 
-export const integrityExtendedScales = ['Alcohol', 'Good Impression', 'Self-control', 'Personality-Integrity Total', 'Conformity', 'Employment stability', 'Bribe', 'Safety', 'Responsibility', 'Violence', 'Drugs', 'Theft', 'Loyalty', 'Reliability', 'Substance abuse'];
+export const integrityExtendedScales = ['Alcohol', 'Good Impression', 'Self-control', 'Personality-Integrity Total', 'Conformity', 'Employment stability', 'Safety', 'Responsibility', 'Drugs', 'Theft', 'Reliability'];
 export const integritySEScales = ['Impulsiveness', 'Risk-taking', 'Potential for personal risk', 'Manipulative behavior', 'Phishing awareness'];
-export const personalityScales = ['Self-control', 'Conformity'];
-export const skillScales = ['Skills'];
-export const skillIGameScales = ['IGame main score', 'IGame Analytical Ability', 'IGame Quick Thinking'];
-export const skillSpeakScales = ['Speak main score'];
+export const personalityScales = ['Self-control', 'Conformity', 'Dominance', 'Good Impression'];
+export const skillsScales = ['Skills'];
+export const skillsIGameScales = ['IGame main score', 'IGame Analytical Ability', 'IGame Quick Thinking'];
+export const skillsSpeakScales = ['Speak main score'];
 
 
 
@@ -205,17 +205,17 @@ class AssessmentEditorScalesTab extends BasePage {
         await this.addScaleAndNorm(personalityScales, scaleNormForPersonality)
         await this.saveScale()
     }
-    async addScaleForSkill() {
-        await this.addScaleAndNorm(skillScales)
+    async addScaleForSkills() {
+        await this.addScaleAndNorm(skillsScales)
         await this.saveScale()
     }
-    async addScaleForSkillIGame() {
-        await this.addScaleAndNorm(skillIGameScales)
+    async addScaleForSkillsIGame() {
+        await this.addScaleAndNorm(skillsIGameScales)
         await this.saveScale()
     }
 
-    async addScaleForSkillSpeak() {
-        await this.addScaleAndNorm(skillSpeakScales)
+    async addScaleForSkillsSpeak() {
+        await this.addScaleAndNorm(skillsSpeakScales)
         await this.saveScale()
     }
 
@@ -255,13 +255,13 @@ class AssessmentEditorScalesTab extends BasePage {
                 await this.addScaleForPersonality();
                 break
             case 'Skills':
-                await this.addScaleForSkill();
+                await this.addScaleForSkills();
                 break
             case 'Skills IGame':
-                await this.addScaleForSkillIGame();
+                await this.addScaleForSkillsIGame();
                 break
             case 'Skills Speak':
-                await this.addScaleForSkillSpeak();
+                await this.addScaleForSkillsSpeak();
                 break
             //Note for undefined
             default:

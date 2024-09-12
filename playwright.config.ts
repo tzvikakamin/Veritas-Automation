@@ -30,7 +30,7 @@ export default defineConfig({
     trace: 'on',
     launchOptions: {
       args: [ '--start-maximized' ],
-      slowMo: 50,
+      // slowMo: 50,
     },
     storageState: 'storageState.json',
     
@@ -47,7 +47,6 @@ export default defineConfig({
         viewport: null,
         launchOptions:{
           args: [ '--start-maximized' ],
-          slowMo: 50,
         },
         storageState: 'storageState.json',
         
