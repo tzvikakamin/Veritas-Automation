@@ -1,4 +1,4 @@
-import { test, expect, Page, chromium, } from '@playwright/test'
+import { test, expect, selectors, Page, chromium, } from '@playwright/test'
 import AssessmentsPage from '../../pages/configurator/assessments/assessment.page';
 import AssessmentCreationPage from '../../pages/configurator/assessments/assessment creation/assessmentCreation.page';
 import AssessmentEditorTabsPage from '../../pages/configurator/assessments/assessment editor/assessmentEditorTabs.page';
@@ -9,10 +9,9 @@ import AssessmentEditorQuestionTab from '../../pages/configurator/assessments/as
 let page: Page;
 let context;
 
-test.describe.serial('Integrity', () => {
+test.describe.serial('Integrity extended', () => {
   test.beforeAll(async ({ browser }) => {
-
-    browser = await chromium.launch({ slowMo: 40 });
+    browser = await chromium.launch({ slowMo: 15 });
     context = await browser.newContext();
     page = await context.newPage();
   });
@@ -23,24 +22,24 @@ test.describe.serial('Integrity', () => {
   });
 
 
-  test('Create integrity assessment with the settings: Automatic Continue, Unlimited corrections, Skipping', async () => {
+  test('Create integrity extended assessment with the settings: Automatic Continue, Unlimited corrections, Skipping', async () => {
     const assessmentPage = new AssessmentsPage(page);
     const assessmentCreationPage = new AssessmentCreationPage(page);
 
     // this 'goto' do login and go to the assessment page
     await assessmentPage.goto();
 
-    await assessmentCreationPage.createNewAssessment('Integrity');
+    await assessmentCreationPage.createNewAssessment('Integrity Extended');
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(assessmentCreationPage.$.successMessage).toBeVisible({ timeout: 3000 })
 
   });
 
-  test('Add scales for the new integrity assessment', async () => {
+  test('Add scales for the new integrity extended assessment', async () => {
     const scalesPage = new AssessmentEditorScalesTab(page)
 
-    await scalesPage.navigateToScaleTabAndAddScalesAndNormToAssessment('Integrity')
+    await scalesPage.navigateToScaleTabAndAddScalesAndNormToAssessment('Integrity Extended')
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(scalesPage.$.successMessage).toBeVisible()

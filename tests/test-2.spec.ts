@@ -5,10 +5,11 @@ import AssessmentPreview from '../pages/configurator/assessments/assessment edit
 
 let page: Page;
 test('test', async ({ browser }) => {
-  page = await browser.newPage();
+  const context = await browser.newContext();
+  page = await context.newPage();
   const assessTab = new AssessmentEditorTabsPage(page);
   
-  await assessTab.page.goto('https://34.165.52.158/ac/#/assessment/936748755021000806/questions');
+  await assessTab.page.goto('https://34.165.52.158/ac/#/assessment/936748755021032049/questions');
   
   
   if (assessTab.page.locator('alert span[translate="fatal.auth.not_logged_in"]').isVisible({ timeout: 1500 })) {
