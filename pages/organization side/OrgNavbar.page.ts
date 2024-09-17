@@ -8,7 +8,7 @@ class OrgNavbarPage extends BasePage {
 
     $ = {
         addCandidateLink: this.page.locator('a.button-add-candidate '),
-        allCandidatesLink:this.page.locator(''),
+        allCandidatesLink:this.page.locator('[translate-once="customer.sidebar.AllCandidate"]'),
     }
 
     async goto(customerName: string) {

@@ -23,9 +23,14 @@ class AddCandidatePage extends BasePage {
         genderMaleRadioButton: this.page.locator('label[for="male_radio_btn"]'),
         genderFemaleRadioButton: this.page.locator('label[for="female_radio_btn"]'),
 
+        // mass upload 
+         massUploadBTN:this.page.locator('.icon.open-true'),
+         importFromFileBTN:this.page.locator('#massImportFile'),
+
         // save
         cameraNotRequiredCheckbox: this.page.locator('label[for="cameraUseNotRequired"]'),
         addButton: this.page.locator('button[ng-click="save()"]'),
+        successMessage: this.page.locator('alert span[translate="notices.dataSavedSuccessfully"]'),
     }
 
     async goto(organizationName: string) {
@@ -75,13 +80,38 @@ class AddCandidatePage extends BasePage {
         }
     }
 
+    async massUpload() {
+        await this.$.massUploadBTN.click()
+    
+        // await this.$.importFromFileBTN.setInputFiles()
 
-    async save() {
-        await this.$.cameraNotRequiredCheckbox.check()
-        await this.$.addButton.click()
+        // await this.$.lastNameInput.fill(lastName)
+        // if (gender === 'male') {
+        //     await this.$.genderMaleRadioButton.click()
+        // } else {
+        //     await this.$.genderFemaleRadioButton.click()
+        // }
     }
 
 
+    async save() {
+        if (await this.$.cameraNotRequiredCheckbox.isVisible()) {
+            await this.$.cameraNotRequiredCheckbox.check()     
+        }
+        await this.$.addButton.click()
+    }
+
 }
 
+
+
+
+export function generateRandomNumbers(): number {
+   
+    return Math.floor(Math.random() * 900000) + 100000;
+}
+const randomSixNumbers = generateRandomNumbers();
+console.log(randomSixNumbers);
+
 export default AddCandidatePage
+ 

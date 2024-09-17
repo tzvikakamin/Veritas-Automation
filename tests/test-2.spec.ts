@@ -5,7 +5,7 @@ import AssessmentPreview from '../pages/configurator/assessments/assessment edit
 
 let page: Page;
 test('test', async ({ browser }) => {
-  const context = await browser.newContext();
+  const context = await browser.newContext({});
   page = await context.newPage();
   const assessTab = new AssessmentEditorTabsPage(page);
   
