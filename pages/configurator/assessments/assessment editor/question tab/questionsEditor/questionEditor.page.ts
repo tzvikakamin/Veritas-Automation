@@ -4,7 +4,7 @@ import AddScaleToAnswersSection from "./add scale to answers section/addScaleToA
 import BasePage from "../../../../../../global/base/Base.page"
 import { Locator } from "@playwright/test"
 // import scales to test by assessment type
-import { integrityExtendedScales, personalityScales, integritySEScales, skillIGameScales, skillScales, skillSpeakScales } from '../../scales tab/scaleTab.page'
+import { integrityExtendedScales, personalityScales, integritySEScales, skillsIGameScales, skillsScales, skillsSpeakScales } from '../../scales tab/scaleTab.page'
 import { isRegExp } from "util/types"
 import waitForLoading from "../../../../../../global/utils/waitForLoading"
 
@@ -85,7 +85,7 @@ class QuestionEditorPage extends BasePage {
 
     // This function gives the possibility to add a media question
     async addMediaToQuestion() {
-     await this.$.addMediaInput.setInputFiles("./media upload/video1.mp4")
+     await this.$.addMediaInput.setInputFiles("./media upload/mediaQuestion1.jpg")
      await this.getSaveMessage()
     }
 

@@ -137,54 +137,54 @@ class AssessmentCreationPage extends BasePage {
 
         switch (assessmentType) {
             case 'Integrity':
-                await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
+                await this.insertName('QA ' + assessmentType + ' ' + new Date().toLocaleString())
                 await this.selectIntegrityAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
                 console.log(this.assessmentName)
                 break
             case 'Integrity Extended':
-                await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
+                await this.insertName('QA ' + assessmentType + ' ' + new Date().toLocaleString())
                 await this.selectIntegrityExtendedAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
                 console.log(this.assessmentName);
                 break
             case 'Integrity Social Engineering':
-                await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
+                await this.insertName('QA ' + assessmentType + ' ' + new Date().toLocaleString())
                 await this.selectIntegritySocialEngineeringAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
                 console.log(this.assessmentName);
                 break
             case 'Intro':
-                await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
+                await this.insertName('QA ' + assessmentType + ' ' + new Date().toLocaleString())
                 await this.selectIntroAssessment();
                 await this.saveAndGetSaveMessage();
                 console.log(this.assessmentName);
                 break
             case 'Personality':
-                await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
+                await this.insertName('QA ' + assessmentType + ' ' + new Date().toLocaleString())
                 await this.selectPersonalityAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
                 console.log(this.assessmentName);
                 break
             case 'Skills':
-                await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
+                await this.insertName('QA ' + assessmentType + ' ' + new Date().toLocaleString())
                 await this.selectSkillsAssessment();
                 await this.setOtherSettings();
                 await this.saveAndGetSaveMessage();
                 console.log(this.assessmentName);
                 break
             case 'Skills IGame':
-                await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
+                await this.insertName('QA ' + assessmentType + ' ' + new Date().toLocaleString())
                 await this.selectSkillsIGameAssessment();
                 await this.saveAndGetSaveMessage();
                 console.log(this.assessmentName);
                 break
             case 'Skills Speak':
-                await this.insertName('QA ' + assessmentType + new Date().toLocaleString())
+                await this.insertName('QA ' + assessmentType + ' ' + new Date().toLocaleString())
                 await this.selectSkillsSpeakAssessment();
                 await this.saveAndGetSaveMessage();
                 console.log(this.assessmentName);

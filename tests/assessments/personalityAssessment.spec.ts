@@ -2,16 +2,16 @@ import { test, expect, Page, chromium, } from '@playwright/test'
 import AssessmentsPage from '../../pages/configurator/assessments/assessment.page';
 import AssessmentCreationPage from '../../pages/configurator/assessments/assessment creation/assessmentCreation.page';
 import AssessmentEditorTabsPage from '../../pages/configurator/assessments/assessment editor/assessmentEditorTabs.page';
-import AssessmentEditorScalesTab, { integrityExtendedScales } from '../../pages/configurator/assessments/assessment editor/scales tab/scaleTab.page';
+import AssessmentEditorScalesTab, { personalityScales } from '../../pages/configurator/assessments/assessment editor/scales tab/scaleTab.page';
 import QuestionEditorPage from '../../pages/configurator/assessments/assessment editor/question tab/questionsEditor/questionEditor.page';
 import AssessmentEditorQuestionTab from '../../pages/configurator/assessments/assessment editor/question tab/questionTab.page';
 
 let page: Page;
 let context;
 
-test.describe.serial('Integrity', () => {
+test.describe.serial('Personality', () => {
   test.beforeAll(async ({ browser }) => {
-
+    console.log('opened youtube')
     browser = await chromium.launch({ slowMo: 40 });
     context = await browser.newContext();
     page = await context.newPage();
@@ -23,24 +23,24 @@ test.describe.serial('Integrity', () => {
   });
 
 
-  test('Create integrity assessment with the settings: Automatic Continue, Unlimited corrections, Skipping', async () => {
+  test('Create personality assessment with the settings: Automatic Continue, Unlimited corrections, Skipping', async () => {
     const assessmentPage = new AssessmentsPage(page);
     const assessmentCreationPage = new AssessmentCreationPage(page);
 
     // this 'goto' do login and go to the assessment page
     await assessmentPage.goto();
 
-    await assessmentCreationPage.createNewAssessment('Integrity');
+    await assessmentCreationPage.createNewAssessment('Personality');
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(assessmentCreationPage.$.successMessage).toBeVisible({ timeout: 3000 })
 
   });
 
-  test('Add scales for the new integrity assessment', async () => {
+  test('Add scales for the new personality assessment', async () => {
     const scalesPage = new AssessmentEditorScalesTab(page)
 
-    await scalesPage.navigateToScaleTabAndAddScalesAndNormToAssessment('Integrity')
+    await scalesPage.navigateToScaleTabAndAddScalesAndNormToAssessment('Personality')
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(scalesPage.$.successMessage).toBeVisible()
@@ -58,7 +58,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Confirm info', [], integrityExtendedScales, 12, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Confirm info', [], personalityScales, 12, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -68,7 +68,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Date', [], integrityExtendedScales, 6, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Date', [], personalityScales, 6, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -78,7 +78,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Dates range', [], integrityExtendedScales, 1, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Dates range', [], personalityScales, 1, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -88,7 +88,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Drag and Drop', ['answer 1', 'answer 2', 'answer 3'], integrityExtendedScales, 2, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Drag and Drop', ['answer 1', 'answer 2', 'answer 3'], personalityScales, 2, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -98,7 +98,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Free text', [], integrityExtendedScales, 3, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Free text', [], personalityScales, 3, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -108,7 +108,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Multiple choice', ['answer 1', 'answer 2', 'answer 3'], integrityExtendedScales, 1, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Multiple choice', ['answer 1', 'answer 2', 'answer 3'], personalityScales, 1, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -118,7 +118,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('No answers', [], integrityExtendedScales, 2, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('No answers', [], personalityScales, 2, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -128,7 +128,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Questionnaire', [], integrityExtendedScales, 3, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Questionnaire', [], personalityScales, 3, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -138,7 +138,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Single choice', ['answer 1', 'answer 2', 'answer 3'], integrityExtendedScales, 1, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Single choice', ['answer 1', 'answer 2', 'answer 3'], personalityScales, 1, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -148,7 +148,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Video answer', ['answer 1', 'answer 2', 'answer 3'], integrityExtendedScales, 2, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Video answer', ['answer 1', 'answer 2', 'answer 3'], personalityScales, 2, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -158,7 +158,7 @@ test.describe.serial('Integrity', () => {
     await questionTabPage.clickAddQuestion();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Yes-No', [], integrityExtendedScales, 3, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Yes-No', [], personalityScales, 3, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();
@@ -177,7 +177,7 @@ test.describe.serial('Integrity', () => {
     await expect(questionPage.$.addMediaSuccessfullyMessage).toBeVisible();
 
     /* ----------------------------------------- Question type ---------------------------------------------------*/
-    await questionPage.AddQuestionAndAnswersAndConnectScale('Single choice', ['answer 1',], integrityExtendedScales, 1, undefined);
+    await questionPage.AddQuestionAndAnswersAndConnectScale('Single choice', ['answer 1',], personalityScales, 1, undefined);
 
     /* ------------------------------------------- Assert --------------------------------------------------------*/
     await expect(questionPage.$.successMessage).toBeVisible();

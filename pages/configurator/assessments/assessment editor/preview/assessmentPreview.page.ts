@@ -24,10 +24,5 @@ class AssessmentPreview extends BasePage {
     }
 
 
-
-
-
-
-
 }
 export default AssessmentPreview

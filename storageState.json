@@ -15,17 +15,17 @@
       "value": "GA1.1.2106732249.1724838707",
       "domain": "34.165.52.158",
       "path": "/",
-      "expires": 1759819665.855205,
+      "expires": 1761114385.855742,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_gid",
-      "value": "GA1.1.639809794.1725174925",
+      "value": "GA1.1.1626480649.1726482597",
       "domain": "34.165.52.158",
       "path": "/",
-      "expires": 1725346065,
+      "expires": 1726640785,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -35,14 +35,14 @@
       "value": "1",
       "domain": "34.165.52.158",
       "path": "/",
-      "expires": 1725259720,
+      "expires": 1726554439,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "PHPSESSID",
-      "value": "b79b4549a05f42cf814329bbc73d52ed",
+      "value": "d8e10f90449d835ea471f74f9894b9dd",
       "domain": "34.165.52.158",
       "path": "/",
       "expires": -1,
@@ -56,19 +56,11 @@
       "origin": "https://34.165.52.158",
       "localStorage": [
         {
-          "name": "player",
-          "value": "{\"male\":true,\"id\":\"1\",\"name_tid\":\"72057594213098023\",\"code\":\"en\",\"production\":\"t\",\"content\":\"t\",\"short_code\":\"en\",\"rtl\":\"f\",\"locale\":\"en_us\",\"gender\":\"t\",\"order_index\":\"2\",\"name\":\"English\",\"names_ml\":[{\"id\":\"72057594213098941\",\"ct_language_id\":\"1\",\"value\":\"English\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785415508444316\",\"ct_language_id\":\"1801439851240451860\",\"value\":\"Inglés\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"72057594213098947\",\"ct_language_id\":\"3\",\"value\":\"Англiйська\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"1801439851240443223\",\"ct_language_id\":\"4\",\"value\":\"אנגלית\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785425880074571\",\"ct_language_id\":\"1801439851240446753\",\"value\":\"Inglês\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"}]}"
-        },
-        {
-          "name": "intercom.intercom-state",
-          "value": "{\"app\":{\"color\":\"#333333\",\"secondaryColor\":\"#333333\",\"openConfig\":{\"layout\":\"default\",\"openTo\":\"messages\",\"spaces\":[{\"type\":\"messages\",\"label\":\"Messages\",\"navigationLabel\":\"Messages\",\"badge\":null}],\"userHasReceivedChecklists\":false,\"userHasLiveNewsfeed\":false,\"userHasTickets\":false},\"selfServeSuggestionsMatch\":false,\"name\":\"Adam Milo [TEST]\",\"features\":{\"anonymousInboundMessages\":true,\"googleAnalytics\":false,\"hubspotInstalled\":false,\"inboundMessages\":true,\"marketoEnrichmentInstalled\":false,\"outboundMessages\":true,\"googleAnalytics4Integration\":true},\"launcherLogoUrl\":null,\"inboundConversationsDisabled\":false,\"isInstantBootEnabled\":false,\"alignment\":\"right\",\"horizontalPadding\":20,\"verticalPadding\":20,\"isDeveloperWorkspace\":false,\"customGoogleAnalyticsTrackerId\":null},\"launcher\":{\"isLauncherEnabled\":true},\"launcherDiscoveryMode\":{\"hasDiscoveredLauncher\":true},\"user\":{\"role\":\"user\",\"locale\":\"en\",\"hasConversations\":false},\"message\":{},\"conversations\":{\"byId\":{}},\"openOnBoot\":{\"type\":null,\"metadata\":{},\"lastOpenAtTimestamp\":1725176215260},\"operator\":{\"lastComposerEvent\":0},\"router\":{\"isInitialized\":false,\"navigationQueue\":[]}}"
-        },
-        {
           "name": "XSRF_TOKEN",
-          "value": "d54e077c10aba337583c613e0d7aaa6d"
+          "value": "f7563af4a3e269531164b5d1cf0766ed"
         },
         {
-          "name": "locale",
+          "name": "player",
           "value": "{\"male\":true,\"id\":\"1\",\"name_tid\":\"72057594213098023\",\"code\":\"en\",\"production\":\"t\",\"content\":\"t\",\"short_code\":\"en\",\"rtl\":\"f\",\"locale\":\"en_us\",\"gender\":\"t\",\"order_index\":\"2\",\"name\":\"English\",\"names_ml\":[{\"id\":\"72057594213098941\",\"ct_language_id\":\"1\",\"value\":\"English\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785415508444316\",\"ct_language_id\":\"1801439851240451860\",\"value\":\"Inglés\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"72057594213098947\",\"ct_language_id\":\"3\",\"value\":\"Англiйська\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"1801439851240443223\",\"ct_language_id\":\"4\",\"value\":\"אנגלית\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785425880074571\",\"ct_language_id\":\"1801439851240446753\",\"value\":\"Inglês\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"}]}"
         },
         {
@@ -78,26 +70,13 @@
         {
           "name": "inactivityTick",
           "value": "1724926503715"
-        }
-      ]
-    },
-    {
-      "origin": "https://34.165.121.223",
-      "localStorage": [
+        },
         {
-          "name": "XSRF_TOKEN",
-          "value": "ac8b76779bfaa6bf25e1810a9609db36"
+          "name": "intercom.intercom-state",
+          "value": "{\"app\":{\"color\":\"#333333\",\"secondaryColor\":\"#333333\",\"openConfig\":{\"layout\":\"default\",\"openTo\":\"messages\",\"spaces\":[{\"type\":\"messages\",\"label\":\"Messages\",\"navigationLabel\":\"Messages\",\"badge\":null}],\"userHasReceivedChecklists\":false,\"userHasLiveNewsfeed\":false,\"userHasTickets\":false},\"selfServeSuggestionsMatch\":false,\"name\":\"Adam Milo [TEST]\",\"features\":{\"anonymousInboundMessages\":true,\"googleAnalytics\":false,\"hubspotInstalled\":false,\"inboundMessages\":true,\"marketoEnrichmentInstalled\":false,\"outboundMessages\":true,\"googleAnalytics4Integration\":true},\"launcherLogoUrl\":null,\"inboundConversationsDisabled\":false,\"isInstantBootEnabled\":false,\"alignment\":\"right\",\"horizontalPadding\":20,\"verticalPadding\":20,\"isDeveloperWorkspace\":false,\"customGoogleAnalyticsTrackerId\":null},\"launcher\":{\"isLauncherEnabled\":true},\"launcherDiscoveryMode\":{\"hasDiscoveredLauncher\":true},\"user\":{\"role\":\"user\",\"locale\":\"en\",\"hasConversations\":false},\"message\":{},\"conversations\":{\"byId\":{}},\"openOnBoot\":{\"type\":null,\"metadata\":{},\"lastOpenAtTimestamp\":1726123487198},\"operator\":{\"lastComposerEvent\":0},\"router\":{\"isInitialized\":false,\"navigationQueue\":[]}}"
         },
         {
           "name": "locale",
-          "value": "{\"male\":true,\"id\":\"1\",\"name_tid\":\"72057594213098023\",\"code\":\"en\",\"production\":\"t\",\"content\":\"t\",\"short_code\":\"en\",\"rtl\":\"f\",\"locale\":\"en_us\",\"gender\":\"t\",\"order_index\":\"2\",\"name\":\"English\",\"names_ml\":[{\"id\":\"72057594213098941\",\"ct_language_id\":\"1\",\"value\":\"English\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785415508444316\",\"ct_language_id\":\"1801439851240451860\",\"value\":\"Inglés\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"72057594213098947\",\"ct_language_id\":\"3\",\"value\":\"Англiйська\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"1801439851240443223\",\"ct_language_id\":\"4\",\"value\":\"אנגלית\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785425880074571\",\"ct_language_id\":\"1801439851240446753\",\"value\":\"Inglês\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"}]}"
-        },
-        {
-          "name": "content",
-          "value": "{\"male\":true,\"id\":\"1\",\"name_tid\":\"72057594213098023\",\"code\":\"en\",\"production\":\"t\",\"content\":\"t\",\"short_code\":\"en\",\"rtl\":\"f\",\"locale\":\"en_us\",\"gender\":\"t\",\"order_index\":\"2\",\"name\":\"English\",\"names_ml\":[{\"id\":\"72057594213098941\",\"ct_language_id\":\"1\",\"value\":\"English\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785415508444316\",\"ct_language_id\":\"1801439851240451860\",\"value\":\"Inglés\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"72057594213098947\",\"ct_language_id\":\"3\",\"value\":\"Англiйська\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"1801439851240443223\",\"ct_language_id\":\"4\",\"value\":\"אנגלית\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785425880074571\",\"ct_language_id\":\"1801439851240446753\",\"value\":\"Inglês\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"}]}"
-        },
-        {
-          "name": "player",
           "value": "{\"male\":true,\"id\":\"1\",\"name_tid\":\"72057594213098023\",\"code\":\"en\",\"production\":\"t\",\"content\":\"t\",\"short_code\":\"en\",\"rtl\":\"f\",\"locale\":\"en_us\",\"gender\":\"t\",\"order_index\":\"2\",\"name\":\"English\",\"names_ml\":[{\"id\":\"72057594213098941\",\"ct_language_id\":\"1\",\"value\":\"English\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785415508444316\",\"ct_language_id\":\"1801439851240451860\",\"value\":\"Inglés\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"72057594213098947\",\"ct_language_id\":\"3\",\"value\":\"Англiйська\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"1801439851240443223\",\"ct_language_id\":\"4\",\"value\":\"אנגלית\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"},{\"id\":\"2233785425880074571\",\"ct_language_id\":\"1801439851240446753\",\"value\":\"Inglês\",\"ct_lang_name_id\":\"72057594213098023\",\"root_id\":\"1\",\"root_model\":\"langs\"}]}"
         }
       ]

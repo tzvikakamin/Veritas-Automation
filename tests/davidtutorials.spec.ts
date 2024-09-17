@@ -11,7 +11,7 @@ import QuestionEditorPage from "../pages/configurator/assessments/assessment edi
 import AddScaleToAnswersSection from "../pages/configurator/assessments/assessment editor/question tab/questionsEditor/add scale to answers section/addScaleToAnswers.page";
 import WrapperCreateNewAssessment from '../pages/configurator/assessments/assessment creation/exampleWrapperCreateNewAssessment.page';
 import AssessmentCreationPage from '../pages/configurator/assessments/assessment creation/assessmentCreation.page';
-import { integrityExtendedScales, personalityScales, integritySEScales, skillIGameScales, skillScales, skillSpeakScales } from '../pages/configurator/assessments/assessment editor/scales tab/scaleTab.page'
+import { integrityExtendedScales, personalityScales, integritySEScales, skillsIGameScales, skillsScales, skillsSpeakScales } from '../pages/configurator/assessments/assessment editor/scales tab/scaleTab.page'
 import singleChoice from '../pages/player/screens/singleChoice';
 
 test('david', async ({ page }) => {
@@ -32,8 +32,8 @@ test('david', async ({ page }) => {
     
 
     // await page.pause()
-    await wrapperCreateNewAssessment.gotoAssessmentPage();
-    await wrapperCreateNewAssessment.createAssessmentWithScalesAndQuestions('Integrity');
+    // await wrapperCreateNewAssessment.gotoAssessmentPage();
+    // await wrapperCreateNewAssessment.createAssessmentWithScalesAndQuestions('Integrity');
     // await assessmentEditorTabs.navigateToQuestions();
     // await questionPage.clickAddQuestion();
     // await questionEditorPage.AddQuestionAndAnswersAndConnectScale('Date',['1qq','2'],integrityExtendedScales,88,undefined);
@@ -134,11 +134,10 @@ test('david', async ({ page }) => {
     // Delete automation assessment (delete the first assessment every time)    
     // const assementPage = new AssessmentsPage(page);
     // await assementPage.goto()
-    // for (let index = 0; index < 3; index++) {
+    // for (let index = 0; index < 22; index++) {
     //     await assementPage.page.locator('body > div._veritas > section.main-content > div > div > div.nano-content > div > div > div > div > table > tbody:nth-child(2) > tr > td.table-content__data.tbl__padding.no-wrap.text-right > i').click();
     //     await assementPage.page.locator('body > div.modal.fade.ng-scope.ng-isolate-scope.in > div > div > div.modal-footer.ng-scope > button.button.button-blue__light.ng-scope.zz-dialog-default-focus > span').click();
-    //     await assementPage.page.waitForTimeout(1000)
-    // }
+    //     await assementPage.page.waitForTimeout(1000)}
 
 
 
