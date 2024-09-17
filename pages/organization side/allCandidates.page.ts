@@ -1,10 +1,15 @@
+import { idText } from "typescript"
 import BasePage from "../../global/base/Base.page"
 import OrgNavbarPage from "./OrgNavbar.page"
 
-class allCandidatePage extends BasePage {
+class AllCandidatePage extends BasePage {
 
     $ = {
-        locator: this.page.locator('locatorString'),
+
+        futureCandidatesTab: this.page.locator('[translate="customer.position.futureCandidates"]'),
+        searchField: this.page.locator('[ng-model="search"]'),
+        candidateRow: this.page.locator('.text-standard.no-wrap.p10'),
+
     }
 
     async goto(orgName: string) {
@@ -14,6 +19,19 @@ class allCandidatePage extends BasePage {
         //navigate
     }
 
+    async goToFutureCandidates() {
+        await this.$.futureCandidatesTab.click()
+    }
+
+    async searchCandidate(id: string) {
+        await this.$.searchField.click()
+        await this.$.searchField.fill(id)
+        await this.page.keyboard.press('Enter')
+        
+
+    }
+
+
 }
 
-export default allCandidatePage
+export default AllCandidatePage
